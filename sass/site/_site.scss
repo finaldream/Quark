@@ -1,0 +1,234 @@
+// ==========================================================================
+// Site specific styles
+//
+// For imports, see EOF.
+// ==========================================================================
+
+
+// Small headers
+.archive-title,
+.page-title,
+.entry-content th,
+.comment-content th {
+    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 2;
+    text-transform: uppercase;
+}
+
+// Site specific styles
+#wrapper {
+    width: 100%;
+    position: relative;
+    text-align: left;
+}
+
+#headercontainer {
+    width: 100%;
+}
+
+.site-header {
+    clear: both;
+    width: 90%;
+    font-size: 16px;
+    font-size: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    color: #000;
+}
+
+.site-title h1 {
+    margin-top: 20px;
+    margin-top: 1.25rem;
+}
+
+.site-title img {
+    vertical-align: text-bottom;
+}
+
+.site-title a {
+    color: #333;
+    font-size: 64px;
+    font-size: 4rem;
+    text-decoration: none;
+}
+
+#bannercontainer {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.banner {
+    color: #eaeaea;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 0;
+    padding: 0.9375rem 0;
+    min-height: 75px;
+}
+
+.home .banner .widget {
+    margin: 24px 0;
+    margin: 1.5rem 0;
+}
+
+.banner h1,
+.banner h2,
+.banner h3,
+.banner h4,
+.banner h5,
+.banner h6 {
+    color: #eaeaea;
+ }
+
+.banner h1 {
+    font-size: 56px;
+    font-size: 3.50rem;
+}
+
+.banner h2 {
+    font-size: 32px;
+    font-size: 2rem;
+}
+
+#maincontentcontainer .home-sidebar .widget {
+    background-color: #fcfcfc;
+    border: 1px solid #bbb;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    padding: 10px;
+    padding: 0.625rem;
+}
+
+#maincontentcontainer {
+    width: 100%;
+}
+
+.site-content {
+    clear: both;
+    width: 90%;
+    font-size: 16px;
+    font-size: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 0;
+    padding: 2rem 0;
+    color: #333;
+    line-height: 1.5;
+    position: relative;
+}
+
+.home-sidebar {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 32px;
+    padding-bottom: 2rem;
+}
+
+.home.page .site-content {
+    padding-bottom: 0;
+}
+
+.home.page .site-content article {
+    margin-bottom: 0;
+}
+
+// Social Media icons
+.social-media-icons {
+    float: right;
+    height: auto;
+}
+
+.social-media-icons ul {
+    list-style: none;
+    margin: .5em 0 0 0;
+    padding: 0;
+}
+
+.social-media-icons li {
+    display: inline-block;
+    margin: 0.1em 0 0 0.6em;
+    font-size: 0.6rem;
+    text-align: left;
+}
+
+.social-media-icons a {
+    color: #333;
+    text-decoration: none;
+}
+
+.social-media-icons a:visited {
+    color: #333;
+}
+
+.social-media-icons a:hover, .social-media-icons a:active {
+    color: #2997ab;
+}
+
+
+/*  Breakpoints are set based on the design, not based on device sizes */
+@media only screen and (max-width: 1100px) {
+    .site-title a {
+        font-size: 52px;
+        font-size: 3.25rem;
+    }
+    .banner h1 {
+        font-size: 44px;
+        font-size: 2.75rem;
+    }
+    .banner h2 {
+        font-size: 24px;
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .banner .grid_6_of_12 {
+        width: 100%;
+    }
+    .banner h1, .banner h2, .banner p {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .social-media-icons {
+        float: none;
+        text-align: left;
+    }
+    .social-media-icons li {
+        margin: 0.1em 0.5em 0 0;
+    }
+}
+
+/*  Adjust the menu at less than 520px */
+@media only screen and (max-width: 520px) {
+    .site-title h1 {
+        text-align: center;
+    }
+    .social-media-icons {
+        text-align: center;
+    }
+}
+
+
+// ==========================================================================
+// Imports
+// ==========================================================================
+
+@import "main-content";
+@import "post-formats";
+@import "archives";
+@import "comments";
+@import "widgets";
+@import "footer";

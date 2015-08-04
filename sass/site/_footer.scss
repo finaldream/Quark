@@ -1,0 +1,68 @@
+// ==========================================================================
+// Footer
+// ==========================================================================
+
+#footercontainer {
+    width: 100%;
+}
+
+.site-footer {
+    clear: both;
+    width: 90%;
+    font-size: 16px;
+    font-size: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 0 0 0;
+    padding: 1.875rem 0 0 0;
+    color: #999;
+}
+
+.site-footer h3 {
+    color: #ccc;
+}
+
+.site-footer a {
+    color: #999;
+}
+
+.site-footer a:visited {
+    color: #999;
+}
+
+.site-footer a:hover {
+    color: #2997ab;
+}
+
+.site-footer a:focus {
+    outline: thin dotted;
+    color: #2997ab;
+}
+
+.site-footer .widget-area .widget {
+    margin-bottom: 16px;
+    margin-bottom: 1rem;
+}
+
+.smallprint {
+    color: #999;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.smallprint p {
+    font-size: 14px;
+    font-size: 0.875rem;
+}
+
+.smallprint a {
+    color: #555;
+}
+
+.smallprint a:visited {
+    color: #555;
+}
+
+.smallprint a:hover {
+    color: #2997ab;
+}

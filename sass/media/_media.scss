@@ -1,0 +1,32 @@
+// ==========================================================================
+// Media Element Styles
+// ==========================================================================
+
+img.wp-smiley, .rsswidget img {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+// Text meant only for screen readers
+.assistive-text {
+    clip: rect(1px 1px 1px 1px); // IE6, IE7
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+}
+
+// ==========================================================================
+// Imports
+// ==========================================================================
+
+// Responsive Images
+@import "images";
+
+// WP-Captions
+@import "captions";
+
+// Galleries
+@import "galleries";

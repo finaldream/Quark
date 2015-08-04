@@ -1,0 +1,80 @@
+// ==========================================================================
+//  Post Formats
+//  ==========================================================================
+
+.entry-media {
+    margin: 0 auto 16px;
+    margin: 0 auto 1rem;
+    max-width: 792px;
+    width: 100%;
+}
+
+.entry-media .wp-caption,
+.entry-media .wp-caption-text,
+.entry-media [class*="align"] {
+    margin: 0 auto;
+}
+
+// Aside
+.format-aside .entry-content {
+    margin: 20px 0 18px 0;
+    margin: 1.25rem 0 1.125rem 0;
+}
+
+.format-aside .entry-content p:last-child {
+    margin-bottom: 0;
+}
+
+// Status
+.format-status .entry-content {
+    border-left: 5px solid #ddd;
+    margin: 20px 0 18px 0;
+    margin: 1.25rem 0 1.125rem 0;
+    padding: 0 0 0 15px;
+    padding: 0 0 0 0.9375rem;
+}
+
+.format-status .entry-content p {
+    font-size: 20px;
+    font-size: 1.25rem;
+    font-style: italic;
+}
+
+.format-status .entry-content p:last-child {
+    margin-bottom: 0;
+}
+
+// Quote
+.format-quote .entry-content blockquote:before {
+    font-family: 'FontAwesome';
+    font-weight: normal;
+    font-style: normal;
+    speak: none;
+    vertical-align: top;
+    font-size: 40px;
+    font-size: 2.5rem;
+    content: "\f10d";
+    color: #ddd;
+    top: -15px;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.format-quote .entry-content {
+    margin-top: 24px;
+    margin-top: 1.5rem;
+    position: relative;
+}
+
+.format-quote .entry-content blockquote {
+    border: none;
+    margin-left: 40px;
+    margin-left: 2.5rem;
+}
+
+// Audio
+.format-audio .wp-audio-shortcode {
+    margin-bottom: 16px;
+    margin-bottom: 1rem;
+}

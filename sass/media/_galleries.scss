@@ -1,0 +1,16 @@
+.entry-content dl.gallery-item {
+    margin: 0;
+}
+
+.gallery-columns-1 .gallery-item a {
+    max-width: 100%;
+    width: auto;
+}
+
+.gallery .gallery-icon img {
+    height: auto;
+}
+
+#primary .entry-content [id^="gallery-"] img {
+    border: none;
+}
