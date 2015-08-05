@@ -13,9 +13,12 @@ img.wp-smiley, .rsswidget img {
 
 // Text meant only for screen readers
 .assistive-text {
-    clip: rect(1px 1px 1px 1px); // IE6, IE7
     clip: rect(1px, 1px, 1px, 1px);
     position: absolute !important;
+
+    .lt-ie8 & {
+        clip: rect(1px 1px 1px 1px); // IE6, IE7
+    }
 }
 
 // ==========================================================================

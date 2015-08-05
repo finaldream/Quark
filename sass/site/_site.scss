@@ -10,12 +10,10 @@
 .page-title,
 .entry-content th,
 .comment-content th {
-    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    @include font-size(0.875, 2);
+    font-family: $default-font-family;
     font-style: normal;
     font-weight: 700;
-    font-size: 14px;
-    font-size: 0.875rem;
-    line-height: 2;
     text-transform: uppercase;
 }
 
@@ -31,10 +29,9 @@
 }
 
 .site-header {
+    @include font-size(1);
     clear: both;
     width: 90%;
-    font-size: 16px;
-    font-size: 1rem;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0;
@@ -42,20 +39,22 @@
     color: #000;
 }
 
-.site-title h1 {
-    margin-top: 20px;
-    margin-top: 1.25rem;
-}
+.site-title {
 
-.site-title img {
-    vertical-align: text-bottom;
-}
+    h1 {
+        @include rem-values(margin-top, 1.25);
+    }
 
-.site-title a {
-    color: #333;
-    font-size: 64px;
-    font-size: 4rem;
-    text-decoration: none;
+    img {
+        vertical-align: text-bottom;
+    }
+
+    a {
+        color: $page-title-color;
+        @include font-size(4);
+        text-decoration: none;
+    }
+
 }
 
 #bannercontainer {
@@ -63,136 +62,127 @@
     margin-top: 10px;
 }
 
+.home .banner .widget {
+    @include margin(1.5 0);
+}
+
 .banner {
-    color: #eaeaea;
+    @include padding(0.9375 0);
+    color: $banner-color;
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 15px 0;
-    padding: 0.9375rem 0;
     min-height: 75px;
-}
 
-.home .banner .widget {
-    margin: 24px 0;
-    margin: 1.5rem 0;
-}
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $banner-color;
+     }
 
-.banner h1,
-.banner h2,
-.banner h3,
-.banner h4,
-.banner h5,
-.banner h6 {
-    color: #eaeaea;
- }
+    h1 {
+        @include font-size(3.50);
+    }
 
-.banner h1 {
-    font-size: 56px;
-    font-size: 3.50rem;
-}
-
-.banner h2 {
-    font-size: 32px;
-    font-size: 2rem;
-}
-
-#maincontentcontainer .home-sidebar .widget {
-    background-color: #fcfcfc;
-    border: 1px solid #bbb;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    -moz-background-clip: padding;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    padding: 10px;
-    padding: 0.625rem;
+    h2 {
+        @include font-size(2rem);
+    }
 }
 
 #maincontentcontainer {
     width: 100%;
+
+    .home-sidebar .widget {
+        @include padding(0.625);
+        @include border-radius(5px);
+        background-color: $main-content-bg;
+        border: 1px solid $main-content-border-color;
+        -moz-background-clip: padding;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+    }
 }
 
 .site-content {
+    @include font-size(1, 1.5);
+    @include padding(2 0);
     clear: both;
     width: 90%;
     font-size: 16px;
-    font-size: 1rem;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 32px 0;
-    padding: 2rem 0;
-    color: #333;
-    line-height: 1.5;
+    color: $site-color;
     position: relative;
 }
 
 .home-sidebar {
+    @include rem-values(padding-bottom, 2);
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding-bottom: 32px;
-    padding-bottom: 2rem;
 }
 
 .home.page .site-content {
-    padding-bottom: 0;
-}
 
-.home.page .site-content article {
-    margin-bottom: 0;
+    padding-bottom: 0;
+
+    article {
+        margin-bottom: 0;
+    }
 }
 
 // Social Media icons
 .social-media-icons {
     float: right;
     height: auto;
-}
 
-.social-media-icons ul {
-    list-style: none;
-    margin: .5em 0 0 0;
-    padding: 0;
-}
+    ul {
+        list-style: none;
+        margin: .5em 0 0 0;
+        padding: 0;
+    }
 
-.social-media-icons li {
-    display: inline-block;
-    margin: 0.1em 0 0 0.6em;
-    font-size: 0.6rem;
-    text-align: left;
-}
+    li {
+        display: inline-block;
+        margin: 0.1em 0 0 0.6em;
+        font-size: 0.6rem;
+        text-align: left;
+    }
 
-.social-media-icons a {
-    color: #333;
-    text-decoration: none;
-}
+    a {
+        color: #333;
+        text-decoration: none;
 
-.social-media-icons a:visited {
-    color: #333;
-}
+        &:visited {
+            color: #333;
+        }
 
-.social-media-icons a:hover, .social-media-icons a:active {
-    color: #2997ab;
+        &:hover,
+        &:active {
+            color: #2997ab;
+        }
+    }
+
 }
 
 
 /*  Breakpoints are set based on the design, not based on device sizes */
-@media only screen and (max-width: 1100px) {
+@include media($point-xxl) {
     .site-title a {
-        font-size: 52px;
-        font-size: 3.25rem;
+        @include font-size(3.25);
     }
     .banner h1 {
-        font-size: 44px;
-        font-size: 2.75rem;
+        @include font-size(2.75);
     }
     .banner h2 {
-        font-size: 24px;
-        font-size: 1.5rem;
+        @include font-size(1.5);
     }
 }
 
-@media only screen and (max-width: 900px) {
+@include media($point-l) {
     .banner .grid_6_of_12 {
         width: 100%;
     }
@@ -201,7 +191,7 @@
     }
 }
 
-@media only screen and (max-width: 800px) {
+@include media($point-m) {
     .social-media-icons {
         float: none;
         text-align: left;
@@ -212,7 +202,7 @@
 }
 
 /*  Adjust the menu at less than 520px */
-@media only screen and (max-width: 520px) {
+@include media($point-xs) {
     .site-title h1 {
         text-align: center;
     }

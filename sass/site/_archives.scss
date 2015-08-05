@@ -4,19 +4,15 @@
 
 .archive-header,
 .page-header {
-    margin-bottom: 32px;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid #CCCCCC;
+    @include rem-values(margin-bottom, 2);
+    border-bottom: 1px solid $page-header-border-color
 }
 
 .archive-meta {
-    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    @include font-size(0.875, 2);
+    @include rem-values(margin-top, 1);
+    font-family: $default-font-family;
     font-style: italic;
     font-weight: 400;
-    color: #777;
-    font-size: 14px;
-    font-size: 0.875rem;
-    line-height: 2;
-    margin-top: 16px;
-    margin-top: 1rem;
+    color: $archive-meta-color;
 }

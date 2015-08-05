@@ -7,8 +7,8 @@
 body {
     margin: 0 auto;
     padding: 0;
-    font: 16px/1.5 'PT Sans', Helvetica, Arial, sans-serif;
-    font-size: 1rem;
+    font-family: $default-font-family;
+    @include font-size(1, 1.5);
     font-style: normal;
     font-weight: 400;
     color: #333;
@@ -33,30 +33,29 @@ hr {
     background-color: #ccc;
     border: 0;
     height: 1px;
-    margin: 24px;
-    margin: 1.5rem;
+    @include margin(1.5);
 }
 
 dt {
-    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    font-family: $default-font-family;
     font-style: normal;
     font-weight: 700;
 }
 
 b, strong {
-    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    font-family: $default-font-family;
     font-style: normal;
     font-weight: 700;
 }
 
 em {
-    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    font-family: $default-font-family;
     font-style: italic;
     font-weight: 400;
 }
 
 strong em, b em {
-    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    font-family: $default-font-family;
     font-style: italic;
     font-weight: 700;
 }
@@ -66,45 +65,18 @@ ins {
     text-decoration: none;
 }
 
-
-.alignleft {
-    display: inline;
-    float: left;
-    margin: 0 20px 16px 0;
-    margin: 0 1.25rem 1rem 0;
-}
-
-.alignright {
-    display: inline;
-    float: right;
-    margin: 0 0 16px 20px;
-    margin: 0 0 1rem 1.25rem;
-}
-
-.aligncenter {
-    clear: both;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 16px;
-    margin-bottom: 1rem;
-}
-
 code, pre {
-    border-radius: 3px;
+    @include font-size(0.75);
+    @include padding(0 0.1875 0.125);
+    @include border-radius(3px);
     color: #555;
-    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
-    font-size: 12px;
-    font-size: 0.75rem;
-    padding: 0 3px 2px;
-    padding: 0 0.1875rem 0.125rem;
+    font-family: $monospaced-font-family;
 }
 
 code {
-    background-color: #f7f7f9;
-    border: 1px solid #e1e1e8;
-    padding: 2px 4px;
-    padding: 0.125rem 0.25rem;
+    @include padding(0.125 0.25);
+    background-color: $code-bg;
+    border: 1px solid $code-color;
 }
 
 abbr,

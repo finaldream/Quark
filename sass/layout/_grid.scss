@@ -6,24 +6,29 @@
     display: block;
     float:left;
     margin: 0 0 0 1.6%;
-}
 
-/* Remove the margin on the first column. Works on all browsers incl. IE7+ */
-.col:first-child { margin-left: 0; }
+    /* Remove the margin on the first column. Works on all browsers incl. IE7+ */
+    &:first-child {
+        margin-left: 0;
+    }
+}
 
 .row {
     clear: both;
     margin: 0 auto;
-    *zoom: 1;
+    zoom: 1;
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
 }
 
-.row:before,
-.row:after {
-    content: "";
-    display: table;
-}
-
-.row:after { clear: both; }
 
 
 // ==========================================================================
@@ -49,7 +54,7 @@
 // Media Queries
 // ==========================================================================
 
-@media only screen and (max-width: 800px) {
+@include media($point-m) {
     header .grid_5_of_12 {
         width: 100%;
     }
@@ -60,7 +65,7 @@
 }
 
 /*  Go full Width at less than 650px */
-@media only screen and (max-width: 650px) {
+@include media($point-s) {
     .grid_1_of_12,
     .grid_2_of_12,
     .grid_3_of_12,
@@ -77,12 +82,5 @@
     }
     .col {
         margin: 0;
-    }
-    .main-small-navigation .nav-menu, .nav-menu ul {
-        padding: 0;
-    }
-    .main-small-navigation .nav-menu ul {
-        padding-left: 16px;
-        padding-left: 1rem;
     }
 }

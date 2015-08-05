@@ -1,0 +1,19 @@
+.alignleft {
+    display: inline;
+    float: left;
+    @include margin( 0 1.25 1 0);
+}
+
+.alignright {
+    display: inline;
+    float: right;
+    @include margin( 0 0 1 1.25);
+}
+
+.aligncenter {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    @include rem-values(margin-bottom, 1);
+}

@@ -8,15 +8,28 @@
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 // Using rem font sizing (Root em’s) with fallback to px for ie8 and below - http://snook.ca/archives/html_and_css/font-size-with-rem
-body { margin: 0; font-size: 16px; font-size: 1rem; line-height: 1.5; }
+body {
+    margin: 0;
+    @include font-size(1);
+    line-height: 1.5;
+}
 
-::-webkit-selection { background: #5784FE; color: #fff; text-shadow: none; }
-::-moz-selection { background: #5784FE; color: #fff; text-shadow: none; }
-::selection { background: #5784FE; color: #fff; text-shadow: none; }
+::-webkit-selection { background: $selection-bg; color: $selection-color; text-shadow: none; }
+::-moz-selection { background: $selection-bg; color: $selection-color; text-shadow: none; }
+::selection { background: $selection-bg; color: $selection-color; text-shadow: none; }
 
-a { color: #333; text-decoration: underline; }
-a:visited { color: #666; }
-a:hover { color: #b40101; }
+a {
+    color: $link-color;
+    text-decoration: underline;
+
+    &:hover {
+        color: $link-hover-color;
+    }
+
+    &:visited {
+        color: $link-visited-color;
+    }
+}
 
 menu { padding: 0; }
 

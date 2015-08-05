@@ -1,18 +1,15 @@
 .wp-caption {
-    max-width: 100%; /* Keep wide captions from overflowing their container. */
-    padding: 4px;
-    padding: 0.25rem;
+    max-width: 100%; // Keep wide captions from overflowing their container.
+    @include padding(0.25);
 }
 
 .wp-caption .wp-caption-text,
 .gallery-caption,
 .entry-caption {
-    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    @include font-size(0.875, 1.5);
+    font-family: $default-font-family;
     font-style: italic;
     font-weight: 400;
-    font-size: 14px;
-    font-size: 0.875rem;
-    line-height: 1.5;
-    color: #777;
+    color: $caption-color;
     text-align: center;
 }

@@ -1,0 +1,32 @@
+/*  Breakpoints are set based on the design, not based on device sizes */
+
+// TODO: Improve naming.
+$point-xxs: 320px;
+$point-xs: 520px;
+$point-s: 650px;
+$point-m: 800px;
+$point-l: 900px;
+$point-xl: 980px;
+$point-xxl: 1100px;
+
+@mixin media($point) {
+   @media only screen and (max-width: $point) {
+        @content;
+    }
+}
+
+// Retina (2x Resolution)
+@mixin mediaRetina() {
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (min--moz-device-pixel-ratio: 1.5),
+    only screen and (min-device-pixel-ratio: 1.5) {
+        @content;
+    }
+}
+
+// Print styles
+@mixin mediaPrint() {
+    @media print {
+        @content;
+    }
+}

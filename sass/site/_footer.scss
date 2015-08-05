@@ -7,62 +7,61 @@
 }
 
 .site-footer {
+    @include font-size(1);
+    @include padding(1.875 0 0 0);
     clear: both;
     width: 90%;
-    font-size: 16px;
-    font-size: 1rem;
     max-width: 1200px;
     margin: 0 auto;
     padding: 30px 0 0 0;
-    padding: 1.875rem 0 0 0;
-    color: #999;
-}
+    color: $site-footer-color;
 
-.site-footer h3 {
-    color: #ccc;
-}
+    h3 {
+        color: $site-footer-heading-color;
+    }
 
-.site-footer a {
-    color: #999;
-}
+    a {
+        color: $site-footer-link-color;
 
-.site-footer a:visited {
-    color: #999;
-}
+        &:visited {
+            color: $site-footer-link-color;
+        }
 
-.site-footer a:hover {
-    color: #2997ab;
-}
+        &:hover {
+            color: $site-footer-link-hover-color;
+        }
 
-.site-footer a:focus {
-    outline: thin dotted;
-    color: #2997ab;
-}
+        &:focus {
+            outline: thin dotted;
+            color: $site-footer-link-hover-color;
+        }
+    }
 
-.site-footer .widget-area .widget {
-    margin-bottom: 16px;
-    margin-bottom: 1rem;
+    .widget-area .widget {
+        margin-bottom: 16px;
+        @include rem-values(margin-bottom, 1);
+    }
 }
 
 .smallprint {
     color: #999;
     width: 90%;
     max-width: 1200px;
-}
 
-.smallprint p {
-    font-size: 14px;
-    font-size: 0.875rem;
-}
+    p {
+        font-size: 14px;
+        @include font-size(0.875);
+    }
 
-.smallprint a {
-    color: #555;
-}
+    a {
+        color: $site-footer-small-print-color;
 
-.smallprint a:visited {
-    color: #555;
-}
+        &:visited {
+            color: $site-footer-small-print-color;
+        }
 
-.smallprint a:hover {
-    color: #2997ab;
+        &:hover {
+            color: $site-footer-small-print-hover-color;
+        }
+    }
 }

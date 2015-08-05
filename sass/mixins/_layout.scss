@@ -1,0 +1,78 @@
+// Center block
+@mixin center-block
+{
+    display:      block;
+    margin-left:  auto;
+    margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix()
+{
+    content: "";
+    display: table;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after()
+{
+    clear: both;
+}
+
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1, $lineHeight: false)
+{
+    $sizeValue: strip-unit($sizeValue);
+    $lineHeight: strip-unit($lineHeight);
+    $remSize: strip-unit($rem-size);
+
+    font-size: ($sizeValue * $remSize) * 1px;
+    font-size: $sizeValue * 1rem;
+
+    @if $lineHeight != false {
+        line-height: $lineHeight * 1rem;
+    }
+}
+
+/// Generates properties based on rems, with their pixel fallbacks.
+/// Pixel-fallbacks are resolved against rems based on $rem-size.
+///
+/// @param {String} $property Name of the property to generate.
+/// @param {List}   $values   List of Rem-based values to translate (no unit required).
+@mixin rem-values($property, $values) {
+
+    $px: ();
+    $rem: ();
+    $remSize: strip-unit($rem-size);
+
+    @each $value in $values {
+
+        // Only process numbers, leave string-values like "auto" alone.
+        @if type_of($value) == number {
+            $value: strip-unit($value);
+            $px: append($px, ($value * $remSize) * 1px);
+            $rem: append($rem, $value * 1rem);
+        } @else {
+            $px: append($px, $value);
+            $rem: append($rem, $value);
+        }
+    }
+
+    #{$property}: $px;
+    #{$property}: $rem;
+
+}
+
+/// Shorthand function for generating rem-based paddings.
+///
+/// @param {List} $values List of rem-based paddings without unit.
+@mixin padding($values) {
+    @include rem-values('padding', $values);
+}
+
+/// Shorthand function for generating rem-based margins.
+///
+/// @param {List} $values List of rem-based margins without unit.
+@mixin margin($values) {
+    @include rem-values('margin', $values);
+}

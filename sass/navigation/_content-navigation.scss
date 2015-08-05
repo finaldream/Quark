@@ -9,8 +9,7 @@
 }
 
 #nav-above {
-    padding: 24px;
-    padding: 1.5rem;
+    @include padding(1.5);
 }
 
 #nav-above {
@@ -43,8 +42,7 @@
 
 .nav-single + .comments-area,
 #comment-nav-above {
-    margin: 48px 48px 48px 0;
-    margin: 3rem 3rem 3rem 0;
+    @include margin(3rem 3rem 3rem 0);
 }
 
 ul.page-numbers {
@@ -56,25 +54,24 @@ ul.page-numbers {
 
 li a.page-numbers,
 li span.page-numbers {
-    padding: 5px;
-    padding: 0.3125rem;
-    border: 1px solid #333;
+    @include padding(0.3125);
+    border: 1px solid $nav-page-numbers-color;
     text-decoration: none;
 }
 
 li a:visited.page-numbers {
-    color: #333;
+    color: $nav-page-numbers-color;
 }
 
 li a:hover.page-numbers {
-    background-color: #2997ab;
-    color: #fff;
+    background-color: $nav-page-numbers-hover-bg;
+    color: $nav-page-numbers-hover-color;
 }
 
 li a:hover.prev,
 li a:hover.next {
-    background-color: transparent;
-    color: #2997ab;
+    background-color: $nav-page-numbers-prev-next-hover-bg;
+    color: $nav-page-numbers-prev-next-hover-color;
 }
 
 .page-numbers li {
@@ -82,8 +79,8 @@ li a:hover.next {
 }
 
 li span.current {
-    background-color: #333;
-    color: #fff;
+    background-color: $nav-page-numbers-current-bg;
+    color: $nav-page-numbers-current-color;
 }
 
 li a.prev,

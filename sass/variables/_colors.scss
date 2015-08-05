@@ -1,0 +1,88 @@
+// ==========================================================================
+// Color variables
+//
+// All variables are declared as "!default", so that they can be overridden
+// by custom definitions.
+// ==========================================================================
+
+// Key-colors
+$white: #ffffff !default; // General white, used e.g. for shadows, borders, or mixing colors
+$black: #000000 !default; // General black, used e.g. for shadows, borders, or mixing colors
+$highlight-color: #2997ab !default;
+
+// Text-Selection
+$selection-bg: #5784FE !default;
+$selection-color: #fff !default;
+
+// Site basics
+$site-color: #333 !default;
+$banner-color: #eaeaea !default;
+
+// Links
+$link-color: #333 !default;
+$link-hover-color: $highlight-color !default;
+$link-visited-color: #666 !default;
+
+// Code / Pre
+$code-bg: #f7f7f9 !default;
+$code-color: #e1e1e8 !default;
+
+// Buttons
+$button-color: #333333 !default; // text-color
+$button-bg: #e6e6e6 !default; // background-color
+
+// Alternative button
+$alt-button-color: #ffffff !default; // text-color
+$alt-button-bg: $highlight-color !default; // background-color
+
+// Captions / Headings
+$heading-color: #333 !default;
+$page-title-color: #333 !default;
+$caption-color: #777 !default;
+$page-header-border-color: #CCCCCC !default;
+
+// Navigation
+$navbar-dropdown-header-color: #aaa !default;
+$navbar-dropdown-header-bg: #333 !default;
+$navbar-dropdown-link-color: #fff !default;
+$navbar-dropdown-link-hover-color: $highlight-color !default;
+$navbar-dropdown-sub-hover-color: #333 !default;
+$navbar-dropdown-sub-hover-bg: #fff !default;
+$navbar-divider-color: #aaa !default;
+
+// Content
+$main-content-bg: #fcfcfc !default;
+$main-content-border-color: #bbb !default;
+$table-border-color: #ccc !default;
+$author-description-color: #777 !default;
+$author-link-color: #777 !default;
+$quote-icon-color: #ddd !default;
+$archive-meta-color: #777 !default;
+
+// Content Navigation / Pager
+$nav-page-numbers-color: #333 !default;
+$nav-page-numbers-hover-color: #fff !default;
+$nav-page-numbers-hover-bg: $highlight-color !default;
+$nav-page-numbers-prev-next-hover-color: $highlight-color !default;
+$nav-page-numbers-prev-next-hover-bg: transparent !default;
+$nav-page-numbers-current-color: #fff !default;
+$nav-page-numbers-current-bg: #333 !default;
+
+// Comments
+$comments-header-color: #5e5e5e !default;
+$comments-header-hover-color: #21759b !default;
+$comments-header-cite-color: #444 !default;
+$comments-label-required-color: #bb0504 !default;
+$comments-label-error-color: #bb0504 !default;
+
+// Footer
+$site-footer-color: #999 !default;
+$site-footer-heading-color: #ccc !default;
+$site-footer-link-color: #999 !default;
+$site-footer-link-hover-color: $highlight-color !default;
+$site-footer-small-print-color: #555 !default;
+$site-footer-small-print-hover-color: $highlight-color !default;
+
+// Widgets
+$widget-calendar-border-color: #aaa !default;
+$widget-calendar-today-bg: #ddd !default;

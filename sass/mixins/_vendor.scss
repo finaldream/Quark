@@ -1,0 +1,70 @@
+/// Creates a cross-browser top-bottom linear gradient.
+///
+/// @param {Color}         $baseColor    Bottom color and fallback for browsers without gradient support.
+/// @param {Color|null} $topColor [null] Optional top-color. If omitted, it takes $baseColor and lightens it by 20%.
+@mixin linear-gradient($baseColor, $topColor: null) {
+
+    @if $topColor == null {
+        $topColor: lighten($baseColor, 0.2);
+    }
+
+    background-color: $baseColor;
+    background-image: -ms-linear-gradient(top, $topColor, $baseColor);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from($topColor), to($baseColor));
+    background-image: -webkit-linear-gradient(top, $topColor, $baseColor);
+    background-image: -o-linear-gradient(top, $topColor, $baseColor);
+    background-image: linear-gradient(top, $topColor, $baseColor);
+    background-image: -moz-linear-gradient(top, $topColor, $baseColor);
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#{$topColor}', endColorstr='#{$baseColor}');
+}
+
+/// Creates a recurring button-frame, including background gradient and shaded borders.
+///
+/// @param {Color} $backgroundColor       Background-color of the button
+/// @param {Color} $borderColor [#000000] Border-Color of the button (will be blended)
+@mixin button-frame($backgroundColor, $borderColor: #000000) {
+
+    $solidBorder25: mix($backgroundColor, $borderColor, 0.25);
+    $solidBorder10: mix($backgroundColor, $borderColor, 0.1);
+
+    @include linear-gradient($backgroundColor);
+    border: 1px solid $solidBorder25;
+    border-color: rgba($borderColor, 0.1) rgba($borderColor, 0.1) rgba($borderColor, 0.25);
+    border-color: $solidBorder10 $solidBorder10 $solidBorder25;
+    border-bottom-color: mix($backgroundColor, $borderColor, 0.35);;
+
+    .lt-ie8 & {
+        display:          inline;
+        margin-left:      .3em;
+        background-color: $backgroundColor;
+        border:           0;
+        zoom:             1;
+    }
+
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin box-shadow($args...) {
+    -webkit-box-shadow: $args;
+    -moz-box-shadow: $args;
+    box-shadow: $args;
+}
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+@mixin opacity($value) {
+    opacity: $value;
+    filter: alpha(opacity=#{$value * 10});
+}
+
