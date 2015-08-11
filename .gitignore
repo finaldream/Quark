@@ -1,3 +1,4 @@
 *.ds_store
 ._*
 .sass-cache
+*.css.map
