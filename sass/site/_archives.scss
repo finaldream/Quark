@@ -4,13 +4,13 @@
 
 .archive-header,
 .page-header {
-    @include rem-values(margin-bottom, 2);
+    @include rems(margin-bottom, 2rem);
     border-bottom: 1px solid $page-header-border-color
 }
 
 .archive-meta {
-    @include font-size(0.875, 2);
-    @include rem-values(margin-top, 1);
+    @include font-size(0.875rem, 2rem);
+    @include rems(margin-top, 1rem);
     font-family: $default-font-family;
     font-style: italic;
     font-weight: 400;

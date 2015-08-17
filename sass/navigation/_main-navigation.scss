@@ -3,13 +3,13 @@
 // ==========================================================================
 
 .main-navigation {
-    @include margin(2.8125 0 0 0);
+    @include margin(2.8125rem 0 0 0);
     text-align: left;
     float: right;
     clear: right;
 
     h1 {
-        @include font-size(2, 1.25);
+        @include font-size(2rem, 1.25rem);
     }
 
     ul {
@@ -50,7 +50,7 @@
             }
 
             a {
-                @include padding(0 0.3125); // Padding around each dropdown menu option
+                @include padding(0 0.3125rem); // Padding around each dropdown menu option
                 color: $navbar-dropdown-link-color; // Nav bar dropdown link color
                 width: 10.5em; // Nav bar dropdown width
 
@@ -76,13 +76,13 @@
         .divider {
             border-bottom: 1px solid $navbar-divider-color;
             height:        0;
-            line-height:   0.0625;
+            line-height:   1px;
             overflow:      hidden;
         }
     }
 
     li {
-        @include margin(0 0 0 1.25);
+        @include margin(0 0 0 1.25rem);
         float: left;
         position: relative;
         margin: 0 0 0 20px; // Margin on the left side of each top level menu item (since it's floated right)
@@ -92,7 +92,7 @@
     ul li li.menu-parent-item { // If you don't want the arrows on the sub-menu options, simply remove this style
 
         > a:after {
-            @include font-size(0.5625);
+            @include font-size(0.5625rem);
             font-family: $icon-font-family;
             font-weight: normal;
             font-style: normal;
@@ -110,7 +110,7 @@
     .current_page_parent {
 
         > a {
-            color: #2997ab; // Nav bar link color for current menu item or ancestor
+            color: $navbar-dropdown-header-current-color; // Nav bar link color for current menu item or ancestor
         }
 
     }
@@ -118,7 +118,7 @@
 
 
 .nav-menu {
-    @include font-size(1.125, 1.5);
+    @include font-size(1.125rem, 1.5rem);
     font-family: $default-font-family;
     font-style: normal;
     font-weight: 700;
@@ -134,7 +134,7 @@
     a {
         display: block;
         text-decoration: none;
-        color: #333; // Nav bar link color
+        color: $navbar-dropdown-link-color; // Nav bar link color
     }
 }
 
@@ -149,13 +149,13 @@
 
 @include media($point-xl) {
     .main-navigation {
-        @include margin(2.375 0 0 0);
+        @include margin(2.375rem 0 0 0);
     }
 }
 
 @include media($point-l) {
     .main-navigation {
-        @include margin(2 0 0 0);
+        @include margin(2rem 0 0 0);
     }
 }
 
@@ -175,7 +175,7 @@
         padding: 0;
     }
     .main-small-navigation .nav-menu ul {
-        @include rem-values(padding-left, 1);
+        @include rems(padding-left, 1rem);
     }
 }
 
@@ -207,7 +207,7 @@
         left: 0;
     }
     .main-navigation ul ul a {
-        color: #fff; /* Nav bar dropdown link color */
+        color: $navbar-dropdown-link-color; /* Nav bar dropdown link color */
         background-color: $navbar-dropdown-header-bg;  /* Nav bar dropdown background color */
         width: 100%; /* Nav bar dropdown width */
     }

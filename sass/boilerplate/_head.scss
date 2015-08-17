@@ -10,7 +10,7 @@
 // Using rem font sizing (Root em’s) with fallback to px for ie8 and below - http://snook.ca/archives/html_and_css/font-size-with-rem
 body {
     margin: 0;
-    @include font-size(1);
+    @include font-size(1rem);
     line-height: 1.5;
 }
 

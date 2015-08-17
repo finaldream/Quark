@@ -3,8 +3,8 @@ ol, ul {
 }
 
 p, ol, ul, dl, address {
-    @include margin(0 0 1.5 0);
-    @include font-size(1, 1.5);
+    @include margin(0 0 1.5rem 0);
+    @include font-size(1rem, 1.5rem);
 }
 
 ul ul, ul ol, ol ol, ol ul {

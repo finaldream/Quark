@@ -14,29 +14,29 @@
     hyphens: auto;
     word-wrap:break-word;
     word-break: break-word;
-    @include rem-values(margin-bottom, 3);
+    @include rems(margin-bottom, 3rem);
 }
 
 .widget select {
-    @include rem-values(margin-left, 0.0625);
+    @include rems(margin-left, 0.0625rem);
 }
 
 .widget-area .widget ul ul {
-    @include rem-values(margin-left, 0.75);
+    @include rems(margin-left, 0.75rem);
 }
 
 .widget_rss li {
-    @include margin(0.75);
+    @include margin(0.75rem);
 }
 
 .widget_recent_entries .post-date,
 .widget_rss .rss-date {
-    @include font-size(0.75);
-    @include rem-values(margin-left, 0.75);
+    @include font-size(0.75rem);
+    @include rems(margin-left, 0.75rem);
 }
 
 #wp-calendar {
-    @include font-size(0.875, 2);
+    @include font-size(0.875rem, 2rem);
     margin: 0;
     width: 100%;
 
@@ -69,14 +69,14 @@
     }
 
     #next {
-        @include rem-values(padding-right, 1.5);
+        @include rems(padding-right, 1.5rem);
         text-align: right;
     }
 }
 
 
 .widget_search label {
-    @include font-size(0.875, 1.5);
+    @include font-size(0.875rem, 1.5rem);
     display: block;
 }
 

@@ -1,12 +1,12 @@
 .wp-caption {
     max-width: 100%; // Keep wide captions from overflowing their container.
-    @include padding(0.25);
+    @include padding(0.25rem);
 }
 
 .wp-caption .wp-caption-text,
 .gallery-caption,
 .entry-caption {
-    @include font-size(0.875, 1.5);
+    @include font-size(0.875rem, 1.5rem);
     font-family: $default-font-family;
     font-style: italic;
     font-weight: 400;

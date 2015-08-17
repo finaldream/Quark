@@ -7,8 +7,8 @@
 }
 
 .site-footer {
-    @include font-size(1);
-    @include padding(1.875 0 0 0);
+    @include font-size(1rem);
+    @include padding(1.875rem 0 0 0);
     clear: both;
     width: 90%;
     max-width: 1200px;
@@ -39,18 +39,18 @@
 
     .widget-area .widget {
         margin-bottom: 16px;
-        @include rem-values(margin-bottom, 1);
+        @include rems(margin-bottom, 1rem);
     }
 }
 
 .smallprint {
-    color: #999;
     width: 90%;
     max-width: 1200px;
+    color: $site-footer-small-print-color;
 
     p {
         font-size: 14px;
-        @include font-size(0.875);
+        @include font-size(0.875rem);
     }
 
     a {

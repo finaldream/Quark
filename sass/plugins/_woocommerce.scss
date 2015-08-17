@@ -3,7 +3,7 @@
 // ==========================================================================
 
 h1.page-title {
-    @include font-size(3, 1.25);
+    @include font-size(3rem, 1.25rem);
     font-family: $deco-font-family;
     font-style: normal;
     font-weight: 400;
@@ -97,7 +97,7 @@ h1.page-title {
 
 .woocommerce nav.woocommerce-pagination li a.page-numbers,
 .woocommerce nav.woocommerce-pagination li span.page-numbers {
-    @include padding(0.3125);
+    @include padding(0.3125rem);
     border: 1px solid $nav-page-numbers-color;
     text-decoration: none;
     line-height: 1.25;

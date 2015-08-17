@@ -19,27 +19,27 @@
     clear: both;
 }
 
-// Rem output with px fallback
-@mixin font-size($sizeValue: 1, $lineHeight: false)
+/// Shorthand rems-mixin for font-size and line-height
+///
+/// @param {number} $fontSize [1] font-size in rem/em/px
+/// @param {$lineHeight} $fontSize [false] optional line-height in rem/em/px
+@mixin font-size($fontSize: 1, $lineHeight: false)
 {
-    $sizeValue: strip-unit($sizeValue);
-    $lineHeight: strip-unit($lineHeight);
-    $remSize: strip-unit($rem-size);
 
-    font-size: ($sizeValue * $remSize) * 1px;
-    font-size: $sizeValue * 1rem;
+    @include rems(font-size, $fontSize);
 
     @if $lineHeight != false {
-        line-height: $lineHeight * 1rem;
+        @include rems(line-height, $lineHeight);
     }
 }
 
-/// Generates properties based on rems, with their pixel fallbacks.
-/// Pixel-fallbacks are resolved against rems based on $rem-size.
+/// Generates properties with rem and pixel fallbacks.
+/// Conversion is resolved against $rem-size.
+/// Depending on the provided units
 ///
 /// @param {String} $property Name of the property to generate.
 /// @param {List}   $values   List of Rem-based values to translate (no unit required).
-@mixin rem-values($property, $values) {
+@mixin rems($property, $values) {
 
     $px: ();
     $rem: ();
@@ -49,10 +49,30 @@
 
         // Only process numbers, leave string-values like "auto" alone.
         @if type_of($value) == number {
+            $unit: unit($value);
             $value: strip-unit($value);
-            $px: append($px, ($value * $remSize) * 1px);
-            $rem: append($rem, $value * 1rem);
+
+            @if $unit == "px" {
+                // Pixel-units are converted to rems.
+
+                $px: append($px, $value * 1px);
+                $rem: append($rem, ($value / $remSize) * 1rem);
+
+            } @else if $unit == "rem" or $unit == 'em' {
+
+                // Rems / ems are converted to pixels. Note, rem and em are treated the same.
+                $px: append($px, ($value * $remSize) * 1px);
+                $rem: append($rem, $value * 1rem);
+
+            } @else {
+
+                // All other units are left alone.
+                $px: append($px, $value);
+                $rem: append($rem, $value);
+            }
+
         } @else {
+            // Everything else is left alone.
             $px: append($px, $value);
             $rem: append($rem, $value);
         }
@@ -67,12 +87,12 @@
 ///
 /// @param {List} $values List of rem-based paddings without unit.
 @mixin padding($values) {
-    @include rem-values('padding', $values);
+    @include rems('padding', $values);
 }
 
 /// Shorthand function for generating rem-based margins.
 ///
 /// @param {List} $values List of rem-based margins without unit.
 @mixin margin($values) {
-    @include rem-values('margin', $values);
+    @include rems('margin', $values);
 }

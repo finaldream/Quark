@@ -10,7 +10,7 @@
 .page-title,
 .entry-content th,
 .comment-content th {
-    @include font-size(0.875, 2);
+    @include font-size(0.875rem, 2rem);
     font-family: $default-font-family;
     font-style: normal;
     font-weight: 700;
@@ -29,7 +29,7 @@
 }
 
 .site-header {
-    @include font-size(1);
+    @include font-size(1rem);
     clear: both;
     width: 90%;
     max-width: 1200px;
@@ -42,7 +42,7 @@
 .site-title {
 
     h1 {
-        @include rem-values(margin-top, 1.25);
+        @include rems(margin-top, 1.25rem);
     }
 
     img {
@@ -51,7 +51,7 @@
 
     a {
         color: $page-title-color;
-        @include font-size(4);
+        @include font-size(4rem);
         text-decoration: none;
     }
 
@@ -63,11 +63,11 @@
 }
 
 .home .banner .widget {
-    @include margin(1.5 0);
+    @include margin(1.5rem 0);
 }
 
 .banner {
-    @include padding(0.9375 0);
+    @include padding(0.9375rem 0);
     color: $banner-color;
     width: 90%;
     max-width: 1200px;
@@ -84,7 +84,7 @@
      }
 
     h1 {
-        @include font-size(3.50);
+        @include font-size(3.50rem);
     }
 
     h2 {
@@ -96,7 +96,7 @@
     width: 100%;
 
     .home-sidebar .widget {
-        @include padding(0.625);
+        @include padding(0.625rem);
         @include border-radius(5px);
         background-color: $main-content-bg;
         border: 1px solid $main-content-border-color;
@@ -107,8 +107,8 @@
 }
 
 .site-content {
-    @include font-size(1, 1.5);
-    @include padding(2 0);
+    @include font-size(1rem, 1.5rem);
+    @include padding(2rem 0);
     clear: both;
     width: 90%;
     font-size: 16px;
@@ -119,7 +119,7 @@
 }
 
 .home-sidebar {
-    @include rem-values(padding-bottom, 2);
+    @include rems(padding-bottom, 2rem);
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
@@ -172,13 +172,13 @@
 /*  Breakpoints are set based on the design, not based on device sizes */
 @include media($point-xxl) {
     .site-title a {
-        @include font-size(3.25);
+        @include font-size(3.25rem);
     }
     .banner h1 {
-        @include font-size(2.75);
+        @include font-size(2.75rem);
     }
     .banner h2 {
-        @include font-size(1.5);
+        @include font-size(1.5rem);
     }
 }
 

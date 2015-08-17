@@ -10,7 +10,7 @@ input[type="password"],
 input[type="email"],
 input[type="url"],
 textarea {
-    @include padding(0.5);
+    @include padding(0.5rem);
     @include border-radius(3px);
     font-family: inherit;
     border: 1px solid #ccc;

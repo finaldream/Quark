@@ -8,36 +8,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    @include rem-values(margin-bottom, $h1-margin-bottom);
+    @include rems(margin-bottom, $h1-margin-bottom);
     @include font-size($h1-size, $h1-line-height);
 }
 
 h2 {
-    @include rem-values(margin-bottom, $h2-margin-bottom);
+    @include rems(margin-bottom, $h2-margin-bottom);
     @include font-size($h2-size, $h2-line-height);
 }
 
 h3 {
-    @include rem-values(margin-bottom, $h3-margin-bottom);
+    @include rems(margin-bottom, $h3-margin-bottom);
     @include font-size($h3-size, $h3-line-height);
 }
 
 h4 {
-    @include rem-values(margin-bottom, $h4-margin-bottom);
+    @include rems(margin-bottom, $h4-margin-bottom);
     @include font-size($h4-size, $h4-line-height);
 }
 
 h5 {
-    @include rem-values(margin-bottom, $h5-margin-bottom);
+    @include rems(margin-bottom, $h5-margin-bottom);
     @include font-size($h5-size, $h5-line-height);
 }
 
 h1 {
-    @include rem-values(margin-bottom, $h1-margin-bottom);
+    @include rems(margin-bottom, $h1-margin-bottom);
     @include font-size($h1-size, $h1-line-height);
 }
 
 h6 {
-    @include rem-values(margin-bottom, $h6-margin-bottom);
+    @include rems(margin-bottom, $h6-margin-bottom);
     @include font-size($h6-size, $h6-line-height);
 }
