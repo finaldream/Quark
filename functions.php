@@ -140,46 +140,52 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) {
  *
  * @return string Font stylesheet or empty string if disabled.
  */
-function quark_fonts_url() {
-	$fonts_url = '';
-	$subsets = 'latin';
 
-	/* translators: If there are characters in your language that are not supported by PT Sans, translate this to 'off'.
-	 * Do not translate into your own language.
-	 */
-	$pt_sans = _x( 'on', 'PT Sans font: on or off', 'quark' );
+if ( ! function_exists( 'quark_fonts_url' ) ) {
 
-	/* translators: To add an additional PT Sans character subset specific to your language, translate this to 'greek', 'cyrillic' or 'vietnamese'.
-	 * Do not translate into your own language.
-	 */
-	$subset = _x( 'no-subset', 'PT Sans font: add new subset (cyrillic)', 'quark' );
+	function quark_fonts_url()
+	{
 
-	if ( 'cyrillic' == $subset )
-		$subsets .= ',cyrillic';
+		$fonts_url = '';
+		$subsets   = 'latin';
 
-	/* translators: If there are characters in your language that are not supported by Arvo, translate this to 'off'.
-	 * Do not translate into your own language.
-	 */
-	$arvo = _x( 'on', 'Arvo font: on or off', 'quark' );
+		/* translators: If there are characters in your language that are not supported by PT Sans, translate this to 'off'.
+         * Do not translate into your own language.
+         */
+		$pt_sans = _x('on', 'PT Sans font: on or off', 'quark');
 
-	if ( 'off' !== $pt_sans || 'off' !== $arvo ) {
-		$font_families = array();
+		/* translators: To add an additional PT Sans character subset specific to your language, translate this to 'greek', 'cyrillic' or 'vietnamese'.
+         * Do not translate into your own language.
+         */
+		$subset = _x('no-subset', 'PT Sans font: add new subset (cyrillic)', 'quark');
 
-		if ( 'off' !== $pt_sans )
-			$font_families[] = 'PT+Sans:400,400italic,700,700italic';
+		if ('cyrillic' == $subset)
+			$subsets .= ',cyrillic';
 
-		if ( 'off' !== $arvo )
-			$font_families[] = 'Arvo:400';
+		/* translators: If there are characters in your language that are not supported by Arvo, translate this to 'off'.
+         * Do not translate into your own language.
+         */
+		$arvo = _x('on', 'Arvo font: on or off', 'quark');
 
-		$protocol = is_ssl() ? 'https' : 'http';
-		$query_args = array(
-			'family' => implode( '|', $font_families ),
-			'subset' => $subsets,
-		);
-		$fonts_url = add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" );
+		if ('off' !== $pt_sans || 'off' !== $arvo) {
+			$font_families = array();
+
+			if ('off' !== $pt_sans)
+				$font_families[] = 'PT+Sans:400,400italic,700,700italic';
+
+			if ('off' !== $arvo)
+				$font_families[] = 'Arvo:400';
+
+			$protocol   = is_ssl() ? 'https' : 'http';
+			$query_args = array(
+				'family' => implode('|', $font_families),
+				'subset' => $subsets,
+			);
+			$fonts_url  = add_query_arg($query_args, "$protocol://fonts.googleapis.com/css");
+		}
+
+		return $fonts_url;
 	}
-
-	return $fonts_url;
 }
 
 
@@ -473,7 +479,7 @@ if ( ! function_exists( 'quark_content_nav' ) ) {
 				<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '<i class="fa fa-angle-left"></i>', 'Previous post link', 'quark' ) . '</span> %title' ); ?>
 				<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '<i class="fa fa-angle-right"></i>', 'Next post link', 'quark' ) . '</span>' ); ?>
 
-			<?php } 
+			<?php }
 			elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) { // navigation links for home, archive, and search pages ?>
 
 				<?php echo paginate_links( array(
@@ -482,9 +488,9 @@ if ( ! function_exists( 'quark_content_nav' ) ) {
 					'current' => max( 1, get_query_var( 'paged' ) ),
 					'total' => $wp_query->max_num_pages,
 					'type' => 'list',
-					'prev_text' => wp_kses( __( '<i class="fa fa-angle-left"></i> Previous', 'quark' ), array( 'i' => array( 
+					'prev_text' => wp_kses( __( '<i class="fa fa-angle-left"></i> Previous', 'quark' ), array( 'i' => array(
 						'class' => array() ) ) ),
-					'next_text' => wp_kses( __( 'Next <i class="fa fa-angle-right"></i>', 'quark' ), array( 'i' => array( 
+					'next_text' => wp_kses( __( 'Next <i class="fa fa-angle-right"></i>', 'quark' ), array( 'i' => array(
 						'class' => array() ) ) )
 				) ); ?>
 
@@ -594,7 +600,7 @@ add_action( 'comment_form_default_fields', 'quark_comment_form_default_fields' )
 
 
 /**
- * Update the Comments form to add a 'required' span to the Comment textarea within the form label, because it's pointless 
+ * Update the Comments form to add a 'required' span to the Comment textarea within the form label, because it's pointless
  * submitting a comment that doesn't actually have any text in the comment field!
  *
  * @since Quark 1.0
@@ -682,10 +688,10 @@ if ( ! function_exists( 'quark_posted_on' ) ) {
 		);
 
 		// Translators: 1: Date 2: Author 3: Categories 4: Comments
-		printf( wp_kses( __( '<div class="header-meta">%1$s%2$s<span class="post-categories">%3$s</span>%4$s</div>', 'quark' ), array( 
-			'div' => array ( 
-				'class' => array() ), 
-			'span' => array( 
+		printf( wp_kses( __( '<div class="header-meta">%1$s%2$s<span class="post-categories">%3$s</span>%4$s</div>', 'quark' ), array(
+			'div' => array (
+				'class' => array() ),
+			'span' => array(
 				'class' => array() ) ) ),
 			$date,
 			$author,
@@ -764,7 +770,7 @@ add_filter( 'the_content_more_link', 'quark_remove_more_jump_link' );
  * @return string The 'Continue reading' link
  */
 function quark_continue_reading_link() {
-	return '&hellip;<p><a class="more-link" href="'. esc_url( get_permalink() ) . '" title="' . esc_html__( 'Continue reading', 'quark' ) . ' &lsquo;' . get_the_title() . '&rsquo;">' . wp_kses( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'quark' ), array( 'span' => array( 
+	return '&hellip;<p><a class="more-link" href="'. esc_url( get_permalink() ) . '" title="' . esc_html__( 'Continue reading', 'quark' ) . ' &lsquo;' . get_the_title() . '&rsquo;">' . wp_kses( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'quark' ), array( 'span' => array(
 			'class' => array() ) ) ) . '</a></p>';
 }
 
@@ -917,6 +923,8 @@ if ( ! function_exists( 'quark_get_credits' ) ) {
 /**
  * Outputs the selected Theme Options inline into the <head>
  *
+ * FYI: Setting defaults here, keeps us from removing these options. Defaults are defined in options.php anyways.
+ *
  * @since Quark 1.0
  *
  * @return void
@@ -931,15 +939,19 @@ function quark_theme_options_styles() {
 		'position' => 'top left',
 		'attachment'=>'scroll' );
 
-	$background = of_get_option( 'banner_background', $background_defaults );
-	if ( $background ) {
+	$background = of_get_option( 'banner_background' );
+	if ( !empty($background) ) {
+
+		// Just to be sure.
+		$background = array_merge($background_defaults, $background);
+
 		$bkgrnd_color = apply_filters( 'of_sanitize_color', $background['color'] );
 		$output .= "#bannercontainer { ";
 		$output .= "background: " . $bkgrnd_color . " url('" . esc_url( $background['image'] ) . "') " . $background['repeat'] . " " . $background['attachment'] . " " . $background['position'] . ";";
 		$output .= " }";
 	}
 
-	$footerColour = apply_filters( 'of_sanitize_color', of_get_option( 'footer_color', '#222222' ) );
+	$footerColour = apply_filters( 'of_sanitize_color', of_get_option( 'footer_color') );
 	if ( !empty( $footerColour ) ) {
 		$output .= "\n#footercontainer { ";
 		$output .= "background-color: " . $footerColour . ";";
@@ -948,7 +960,7 @@ function quark_theme_options_styles() {
 
 	if ( of_get_option( 'footer_position', 'center' ) ) {
 		$output .= "\n.smallprint { ";
-		$output .= "text-align: " . sanitize_text_field( of_get_option( 'footer_position', 'center' ) ) . ";";
+		$output .= "text-align: " . sanitize_text_field( of_get_option( 'footer_position' ) ) . ";";
 		$output .= " }";
 	}
 
@@ -1038,7 +1050,7 @@ if ( ! function_exists( 'quark_setup_woocommerce_wrappers' ) ) {
 	function quark_setup_woocommerce_wrappers() {
 		if ( quark_is_woocommerce_active() && is_woocommerce() ) {
 				add_action( 'quark_before_woocommerce', 'quark_before_woocommerce_wrapper', 10, 0 );
-				add_action( 'quark_after_woocommerce', 'quark_after_woocommerce_wrapper', 10, 0 );		
+				add_action( 'quark_after_woocommerce', 'quark_after_woocommerce_wrapper', 10, 0 );
 		}
 	}
 	add_action( 'template_redirect', 'quark_setup_woocommerce_wrappers', 9 );
