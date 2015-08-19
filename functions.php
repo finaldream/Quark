@@ -378,20 +378,10 @@ function quark_scripts_styles() {
 	/**
 	 * Register and enqueue our stylesheets
 	 */
-
-	// Start off with a clean base by using normalise. If you prefer to use a reset stylesheet or something else, simply replace this
-	wp_register_style( 'normalize', trailingslashit( get_template_directory_uri() ) . 'css/normalize.css' , array(), '3.0.2', 'all' );
-	wp_enqueue_style( 'normalize' );
-
 	// Register and enqueue our icon font
 	// We're using the awesome Font Awesome icon font. http://fortawesome.github.io/Font-Awesome
 	wp_register_style( 'fontawesome', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome.min.css' , array( 'normalize' ), '4.2.0', 'all' );
 	wp_enqueue_style( 'fontawesome' );
-
-	// Our styles for setting up the grid.
-	// If you prefer to use a different grid system, simply replace this and perform a find/replace in the php for the relevant styles. I'm nice like that!
-	wp_register_style( 'gridsystem', trailingslashit( get_template_directory_uri() ) . 'css/grid.css' , array( 'fontawesome' ), '1.0.0', 'all' );
-	wp_enqueue_style( 'gridsystem' );
 
 	/*
 	 * Load our Google Fonts.
@@ -405,12 +395,6 @@ function quark_scripts_styles() {
 	$fonts_url = quark_fonts_url();
 	if ( !empty( $fonts_url ) ) {
 		wp_enqueue_style( 'quark-fonts', esc_url_raw( $fonts_url ), array(), null );
-	}
-
-	// If using a child theme, auto-load the parent theme style.
-	// Props to Justin Tadlock for this recommendation - http://justintadlock.com/archives/2014/11/03/loading-parent-styles-for-child-themes
-	if ( is_child_theme() ) {
-		wp_enqueue_style( 'parent-style', trailingslashit( get_template_directory_uri() ) . 'style.css' );
 	}
 
 	// Enqueue the default WordPress stylesheet
