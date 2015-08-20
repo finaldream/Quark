@@ -380,7 +380,7 @@ function quark_scripts_styles() {
 	 */
 	// Register and enqueue our icon font
 	// We're using the awesome Font Awesome icon font. http://fortawesome.github.io/Font-Awesome
-	wp_register_style( 'fontawesome', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome.min.css' , array( 'normalize' ), '4.2.0', 'all' );
+	wp_register_style( 'fontawesome', trailingslashit( get_template_directory_uri() ) . 'css/font-awesome.min.css' , array(), '4.2.0', 'all' );
 	wp_enqueue_style( 'fontawesome' );
 
 	/*
