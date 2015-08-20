@@ -45,36 +45,39 @@
     $rem: ();
     $remSize: strip-unit($rem-size);
 
-    @each $value in $values {
+    @each $val in $values {
+
+        // ugly hack in lack of break-statement.
+        $processed: false;
 
         // Only process numbers, leave string-values like "auto" alone.
-        @if type_of($value) == number {
-            $unit: unit($value);
-            $value: strip-unit($value);
+        @if type_of($val) == number {
+
+            $unit: unit($val);
+            $value: strip-unit($val);
 
             @if $unit == "px" {
                 // Pixel-units are converted to rems.
-
                 $px: append($px, $value * 1px);
                 $rem: append($rem, ($value / $remSize) * 1rem);
 
-            } @else if $unit == "rem" or $unit == 'em' {
+                $processed: true;
 
-                // Rems / ems are converted to pixels. Note, rem and em are treated the same.
+            } @else if $unit == "rem" {
+
+                // Rems are converted to pixels using $remSize.
                 $px: append($px, ($value * $remSize) * 1px);
-                $rem: append($rem, $value * 1rem);
+                $rem: append($rem, $value * 1#{$unit});
 
-            } @else {
-
-                // All other units are left alone.
-                $px: append($px, $value);
-                $rem: append($rem, $value);
+                $processed: true;
             }
 
-        } @else {
-            // Everything else is left alone.
-            $px: append($px, $value);
-            $rem: append($rem, $value);
+        }
+
+        // All other units are left alone. E.g. ems stay ems.
+        @if not $processed {
+            $px: append($px, $val);
+            $rem: append($rem, $val);
         }
     }
 
