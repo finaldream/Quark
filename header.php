@@ -7,32 +7,8 @@
  * @package Quark
  * @since Quark 1.0
  */
-?><!doctype html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" <?php language_attributes(); ?>> <![endif]-->
-<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
-<!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
-
-
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-	<meta http-equiv="cleartype" content="on">
-
-	<!-- Responsive and mobile friendly stuff -->
-	<meta name="HandheldFriendly" content="True">
-	<meta name="MobileOptimized" content="320">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link rel="profile" href="http://gmpg.org/xfn/11" />
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
-	<?php wp_head(); ?>
-</head>
+?><?php get_template_part('templates/page', 'doctype'); ?>
+<?php get_template_part('templates/page', 'head'); ?>
 
 <body <?php body_class(); ?>>
 
@@ -46,11 +22,11 @@
 			<div class="col grid_5_of_12 site-title">
 				<h1>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" rel="home">
-						<?php 
+						<?php
 						$headerImg = get_header_image();
 						if( !empty( $headerImg ) ) { ?>
 							<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
-						<?php } 
+						<?php }
 						else {
 							echo get_bloginfo( 'name' );
 						} ?>
