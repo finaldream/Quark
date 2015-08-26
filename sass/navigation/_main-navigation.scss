@@ -55,7 +55,7 @@
                 width: 10.5em; // Nav bar dropdown width
 
                 &:hover {
-                    color: $navbar-dropdown-link-hover-color; // Nav bar dropdown link color on hover
+                    color: $navbar-dropdown-sub-hover-color; // Nav bar dropdown link color on hover
                 }
             }
 
@@ -63,7 +63,7 @@
                 margin: 0;
 
                 &:hover > a {
-                    color: $navbar-dropdown-link-hover-color; // Nav bar link color on hover
+                    color: $navbar-dropdown-sub-hover-color; // Nav bar link color on hover
                 }
             }
 
@@ -196,7 +196,6 @@
     }
     .main-small-navigation ul li,
     .main-navigation ul li {
-        background-color: #fff;
         margin: 5px 0;
         text-align: center;
     }
